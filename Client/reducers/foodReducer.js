@@ -2,10 +2,8 @@ import * as types from '../constants/actionTypes';
 import getFoodData from "../api/getFoodData";
 
 const initialState = {
-  foodId: 0,
-  foodName: 'tofu',
   foods: [],
-  calories: 0
+  totalFoods: 0,
 };
 
 // Food Object:
@@ -14,6 +12,8 @@ const initialState = {
   // other nutrient info?
 
 const foodReducer = (state = initialState, action) => {
+  const foods = state.foods.slice();
+  let totalFoods = state.totalFoods;
 
   switch (action.type) {
     case types.ADD_FOOD: {
@@ -36,10 +36,18 @@ const foodReducer = (state = initialState, action) => {
         console.log(err);
       });
       console.log(foodId)
+      const newFood = {
+        foodId,
+        foodName: action.payload,
+      }
+
+      foods.push(newFood);
+      totalFoods += 1;
+
       return {
         ...state,
-        foodName: action.payload,
-        foodId, 
+        foods,
+        totalFoods,
       };
     }
 

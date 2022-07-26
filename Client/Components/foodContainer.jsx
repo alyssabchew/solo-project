@@ -14,7 +14,7 @@ const FoodContainer = props => {
           type="text"
           // value={value}
           onChange={(e) => { val = e.target.value; console.log(val); }} />
-        <button type="submit" onClick={(e) => { console.log(val); props.addFood("apple"); e.preventDefault(); } }>Search</button>
+        <button type="submit" onClick={(e) => { val && props.addFood(val); e.preventDefault(); } }>Search</button>
       </form>
         {/* {getFoodData("fried tofu")} */}
     </div>
