@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
-import FoodContainer from './Components/foodContainer.jsx';
+import { connect } from 'react-redux';
+// import from child components...
+import FoodContainer from './Components/FoodContainer.jsx';
 
  const mapStateToProps = state => ({
-
+  
  })
 
  class MainContainer extends Component {
@@ -12,6 +13,7 @@ import FoodContainer from './Components/foodContainer.jsx';
    }
 
    render() {
+    // console.log("rendering main component")
      return (
        <div className="container">
          <div className="outerBox">

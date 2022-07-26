@@ -9,6 +9,8 @@ app.use(express.urlencoded({extended: true}))
 // require routers
 const foodRouter = require('./routers/foodRouter');
 
+app.use('/food', foodRouter);
+
 // Global error handler
 app.use((err, req, res, next) => {
   const defaultErr = {

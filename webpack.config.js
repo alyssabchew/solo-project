@@ -6,7 +6,7 @@ module.exports = {
   mode: process.env.NODE_ENV,
   
   // entry point - creates the dependency graph there
-  entry: './index.js',
+  entry: './Client/index.js',
   
   //output is where everything will be sent after uglified/minified
   output: {
@@ -15,14 +15,18 @@ module.exports = {
     filename: 'bundle.js',
   },
 
-  // devServer : { 
-  //   proxy: {
-  //     '/api/**': 'http://localhost:3000',
-  //     //anything hitting our database should be hitting 3000
-  //     //api reroutes anything going to /api to localhost:3000
-  //     // takes care of fetch call in leaders.js
-  //   },
-  // },
+  devServer : { 
+    // proxy: {
+    //   '/': {
+    //     target: 'https://api.edamam.com',
+    //     secure: false,
+    //   },
+      // "/": "https://api.edamam.com",
+      // '/api/**': 'http://localhost:3000',
+      //anything hitting our database should be hitting 3000
+      //api reroutes anything going to /api to localhost:3000
+      // takes care of fetch call in leaders.js
+  },
   
   plugins: [
     new HtmlWebpackPlugin({
@@ -31,7 +35,7 @@ module.exports = {
     title: 'Development',
     // necessary - template! -- use index.html as default
     // THIS SERVES THE STATIC FILE - STATIC IN DEVSERVER IS USELESS
-    template: 'index.html'
+    template: './Client/index.html'
   })],
   
   module: {

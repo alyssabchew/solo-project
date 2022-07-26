@@ -14,6 +14,9 @@ An application to allow users to hold their recipes + track nutrition informatio
 
 ## Core Idea + MVP
 [ ] Connect to a nutrition API (https://developer.edamam.com/edamam-nutrition-api was the first google search result + has a free option with fewer calls)
+- this one is not working --> attempting to use the edamam recipes api
+- only has full recipes, looking for another food API
+- attempt 3: https://fdc.nal.usda.gov/fdc-app.html#/ 
 [ ] Generate a search box for users to search for food items
 [ ] Specify days + meals of foods
 

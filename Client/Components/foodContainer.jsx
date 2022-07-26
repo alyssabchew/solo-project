@@ -8,11 +8,11 @@ const FoodContainer = props => {
       <div className="innerBox">
       <h2 id="header">Foods!</h2>
       <div className="nutritionFacts">
-        {getFoodData()}
+        {/* {getFoodData("fried tofu")} */}
       </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default FoodContainer;
