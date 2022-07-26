@@ -17,9 +17,10 @@ An application to allow users to hold their recipes + track nutrition informatio
 - this one is not working --> attempting to use the edamam recipes api
 - only has full recipes, looking for another food API
 - attempt 3: https://fdc.nal.usda.gov/fdc-app.html#/ 
-[ ] Generate a search box for users to search for food items
+[ x ] Generate a search box for users to search for food items
 - currently not working (can't search)
-[ ] Specify days + meals of foods
+- now generates a search box that works but all code is stuck in App.jsx
+[ ] Specify days + meals/recipes of foods?
 
 ## Recipes
 Allow users to combine foods into saved recipes for users to come back to later

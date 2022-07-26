@@ -57,6 +57,7 @@ const getFoodData = () => {
   // const foodUrl = `https://api.nal.usda.gov/fdc/v1/foods/search?query=${food}&pageSize=2&api_key=fY2Hwd4z2CmBvNEgBElnaoZAsrSkA8dmsYa1rGfT`
   const foodSearch = (food) => {
     const foodUrl = `https://api.nal.usda.gov/fdc/v1/foods/search?query=${food}&pageSize=2&api_key=fY2Hwd4z2CmBvNEgBElnaoZAsrSkA8dmsYa1rGfT`
+    // ONLY RETURN FETCH CALLS - OTHERWISE, HIT ERRORS BECAUSE PROMISE CHAINING TWICE
     return fetch(foodUrl)
     // .then(res => res.json())
     // .then(res => {

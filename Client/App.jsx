@@ -6,7 +6,7 @@ import MainContainer from "./MainContainer.jsx";
    constructor(props){
      super(props);
      this.state = {
-      foodName: 'banana',
+      foodName: '',
       searchInput: '',
     }
     this.handleSearch = this.handleSearch.bind(this);
@@ -19,7 +19,6 @@ import MainContainer from "./MainContainer.jsx";
    render(){
      return(
        <div>
-         {/* <MainContainer/> */}
          <p>Search for food:</p>
          <form>
            <input
@@ -28,6 +27,7 @@ import MainContainer from "./MainContainer.jsx";
              onChange={this.handleChange} />
            <button type="submit" onClick={this.handleSearch}>Search</button>
          </form>
+         <MainContainer/>
        </div>
      );
    }

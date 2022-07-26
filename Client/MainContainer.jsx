@@ -30,7 +30,7 @@ import FoodContainer from './Components/FoodContainer.jsx';
      return (
        <div className="container">
          <div className="outerBox">
-          <h2 id="header">Search for food</h2>
+          <h2 id="header">Foods</h2>
           <FoodContainer addFood={this.props.addFood}/>
          </div>
        </div>
