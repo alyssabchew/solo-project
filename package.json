@@ -17,6 +17,7 @@
   "author": "Alyssa Chew https://github.com/alyssabchew",
   "license": "ISC",
   "dependencies": {
+    "edamam-api": "^1.1.3",
     "express": "^4.12.3",
     "prop-types": "^15.6.1",
     "react": "^17.0.2",

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
- import MainContainer from "./MainContainer";
+import MainContainer from "./MainContainer.jsx";
 
  class App extends Component {
    constructor(props){

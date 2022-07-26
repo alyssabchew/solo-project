@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
- import { connect } from 'react-redux'
- import FoodContainer from './Components/foodContainer';
+import { connect } from 'react-redux'
+import FoodContainer from './Components/foodContainer.jsx';
 
  const mapStateToProps = state => ({
 
