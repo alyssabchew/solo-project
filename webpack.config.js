@@ -15,14 +15,14 @@ module.exports = {
     filename: 'bundle.js',
   },
 
-  devServer : { 
-    proxy: {
-      '/api/**': 'http://localhost:3000',
-      //anything hitting our database should be hitting 3000
-      //api reroutes anything going to /api to localhost:3000
-      // takes care of fetch call in leaders.js
-    },
-  },
+  // devServer : { 
+  //   proxy: {
+  //     '/api/**': 'http://localhost:3000',
+  //     //anything hitting our database should be hitting 3000
+  //     //api reroutes anything going to /api to localhost:3000
+  //     // takes care of fetch call in leaders.js
+  //   },
+  // },
   
   plugins: [
     new HtmlWebpackPlugin({
