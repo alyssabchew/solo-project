@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import from child components...
+
+// import getFoodData from "./api/getFoodData";
+
+// import from child components... not currently using food container
 import FoodContainer from './Components/FoodContainer.jsx';
 
  const mapStateToProps = state => ({
-  
+  foodId: state.foods.foodId,
+  foodName: state.foods.foodName,
+  calories: state.foods.foodId
  })
+
+ const mapDispatchToProps = dispatch => ({
+  // create functions that will dispatch action creators
+  // addMarket: (event) => { dispatch(grabLocationInput(event)); },
+  addFood: (food) => dispatch(actions.addFoodActionCreator(food)),
+});
 
  class MainContainer extends Component {
    constructor(props) {
@@ -14,15 +25,17 @@ import FoodContainer from './Components/FoodContainer.jsx';
 
    render() {
     // console.log("rendering main component")
+    let value = '';
+    console.log(this.props)
      return (
        <div className="container">
          <div className="outerBox">
-         <h1 id="header">Lifestyle Journal!</h1>
-         <FoodContainer />
+          <h2 id="header">Search for food</h2>
+          <FoodContainer addFood={this.props.addFood}/>
          </div>
        </div>
      )
    }
  }
 
- export default connect(mapStateToProps, null)(MainContainer);
+ export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);
