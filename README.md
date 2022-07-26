@@ -13,7 +13,7 @@ An application to allow users to hold their recipes + track nutrition informatio
     - Allow users to track workouts
 
 ## Core Idea + MVP
-[ ] Connect to a nutrition API
+[ ] Connect to a nutrition API (https://developer.edamam.com/edamam-nutrition-api was the first google search result + has a free option with fewer calls)
 [ ] Generate a search box for users to search for food items
 [ ] Specify days + meals of foods
 
