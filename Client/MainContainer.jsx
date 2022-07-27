@@ -10,7 +10,9 @@ import FoodDisplay from './Components/FoodDisplay.jsx';
  const mapStateToProps = state => ({
   foods: state.foods.foods,
   totalFoods: state.foods.totalFoods,
-  foodData: state.foods.foodData
+  foodData: state.foods.foodData,
+  foodId: state.foods.foodId,
+  foodName: state.foods.foodName,
  })
 
  const mapDispatchToProps = dispatch => ({
@@ -34,7 +36,7 @@ import FoodDisplay from './Components/FoodDisplay.jsx';
           <div className="innerBox">
             <h2 id="header">Foods</h2>
             <FoodCreator addFood={this.props.addFood} handleSearch={this.props.handleSearch} handleChange={this.props.handleChange} searchInput={this.props.searchInput}/>
-            <FoodDisplay foods={this.props.foods} totalFoods={this.props.totalFoods} foodData={this.props.foodData} />
+            <FoodDisplay foods={this.props.foods} foodId={this.props.foodId} foodName={this.props.foodName} totalFoods={this.props.totalFoods} foodData={this.props.foodData} />
           </div>
          </div>
        </div>

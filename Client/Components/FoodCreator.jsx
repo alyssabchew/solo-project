@@ -36,11 +36,12 @@ const FoodCreator = props => {
               return response.json();
             }).then(data => {
               foodData = {...data};
+              props.addFood({foodName: val, foodData, foodId});
             }).catch(err => {
               console.log('failed', err)
               return;
             });
-          props.addFood(val); e.preventDefault(); } }>Search</button>
+           e.preventDefault(); } }>Search</button>
       </form>
       {/* {Foods} */}
         {/* {getFoodData("fried tofu")} */}

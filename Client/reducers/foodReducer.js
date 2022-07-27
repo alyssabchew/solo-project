@@ -5,6 +5,8 @@ const initialState = {
   foods: [],
   totalFoods: 0,
   foodData: {},
+  foodId: 0,
+  foodName: '',
 };
 
 // Food Object:
@@ -59,23 +61,31 @@ const foodReducer = (state = initialState, action) => {
       //   return;
       // });
       // console.log("FOOD RESULTS")
-
+      console.log(action.payload['foodId'])
       const newFood = {
-        foodId: action.payload,
-        foodName: '',
-        foodData: {},
+        foodId: action.payload['foodId'],
+        foodName: action.payload['foodName'],
+        foodData: action.payload['foodData'],
       }
-
+      console.log(newFood);
       foods.push(newFood);
+      console.log("foods after adding newFood: ", foods);
       totalFoods += 1;
       console.log(totalFoods);
       return {
         ...state,
         foods,
         totalFoods,
-        foodData
+        foodId: action.payload['foodId'],
+        foodName: action.payload['foodName'],
+        foodData: action.payload['foodData'],
       };
     }
+
+    // case SET_FOOD_NAME:
+    //   {
+
+    //   }
 
     default: {
       return state;
