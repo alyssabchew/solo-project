@@ -1,4 +1,5 @@
 import React from 'react';
+import getFoodData from '../api/getFoodData';
 
 const FoodCreator = props => {
   // constructor(props) {
@@ -7,7 +8,9 @@ const FoodCreator = props => {
   // }
   // search now handled in App
   let val = '';
-
+  let foodId = 0;
+  let foodData = {};
+  console.log(props);
   return (
     <div className="displayBox">
       <h3>Search for Foods</h3>
@@ -16,12 +19,34 @@ const FoodCreator = props => {
           type="text"
           // value={value}
           onChange={(e) => { val = e.target.value }} />
-        <button type="submit" onClick={(e) => { props.addFood(val); e.preventDefault(); } }>Search</button>
+          {/* onChange={props.handleChange} /> */}
+        <button type="submit" onClick={(e) => { 
+          getFoodData.foodSearch(val)
+            .then(response => {
+              console.log(response);
+              return response.json();
+            }).then(json => {
+              console.log(json)
+              foodId = json.foods[0].fdcId
+              return foodId;
+            }).then(getFoodData.foodDetails)
+            .then(response => {
+              console.log("ran both getFoodData functions!")
+              console.log(response)
+              return response.json();
+            }).then(data => {
+              foodData = {...data};
+            }).catch(err => {
+              console.log('failed', err)
+              return;
+            });
+          props.addFood(val); e.preventDefault(); } }>Search</button>
       </form>
       {/* {Foods} */}
         {/* {getFoodData("fried tofu")} */}
     </div>
   );
+      
 
   // handleSearch(event, search) {
   //   event.preventDefault();

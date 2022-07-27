@@ -33,7 +33,7 @@ import FoodDisplay from './Components/FoodDisplay.jsx';
          <div className="outerBox">
           <div className="innerBox">
             <h2 id="header">Foods</h2>
-            <FoodCreator addFood={this.props.addFood}/>
+            <FoodCreator addFood={this.props.addFood} handleSearch={this.props.handleSearch} handleChange={this.props.handleChange} searchInput={this.props.searchInput}/>
             <FoodDisplay foods={this.props.foods} totalFoods={this.props.totalFoods} foodData={this.props.foodData} />
           </div>
          </div>

@@ -5,12 +5,12 @@ import MainContainer from "./MainContainer.jsx";
  class App extends Component {
    constructor(props){
      super(props);
-  //    this.state = {
-  //     foodName: '',
-  //     searchInput: '',
-  //   }
-  //   this.handleSearch = this.handleSearch.bind(this);
-  //   this.handleChange = this.handleChange.bind(this);
+     this.state = {
+      // foodName: '',
+      searchInput: '',
+    }
+    this.handleSearch = this.handleSearch.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   // }
   // componentDidMount() {
   //   this.searchForFood(this.state.foodName);
@@ -27,7 +27,7 @@ import MainContainer from "./MainContainer.jsx";
              onChange={this.handleChange} />
            <button type="submit" onClick={this.handleSearch}>Search</button>
          </form> */}
-         <MainContainer/>
+         <MainContainer handleSearch={this.state.handleSearch} handleChange={this.state.handleChange} searchInput={this.state.searchInput} />
        </div>
      );
    }
