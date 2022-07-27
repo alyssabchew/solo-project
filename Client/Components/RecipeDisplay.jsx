@@ -3,16 +3,14 @@ import Recipe from './Recipe.jsx';
 
 const RecipeDisplay = props => {
   const Recipes = [];
-
- 
-
-  // for (const recipe of props.recipes) {
-  //   Recipes.push(
-  //     Recipe({
-  //       ...recipe,
-  //     })
-  //   )
-  // }
+  console.log(props.recipes);
+  for (const recipe of props.recipes) {
+    Recipes.push(
+      Recipe({
+        ...recipe,
+      })
+    )
+  }
   console.log(Recipes);
 
   return (

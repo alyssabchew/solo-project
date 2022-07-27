@@ -10,3 +10,8 @@ export const addRecipeActionCreator = recipeName => ({
   type: types.ADD_RECIPE,
   payload: recipeName,
 });
+
+export const addIngredientActionCreator = recipeName => ({
+  type: types.ADD_INGREDIENT,
+  payload: recipeName,
+});

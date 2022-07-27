@@ -4,7 +4,7 @@ import Food from './Food.jsx';
 const FoodDisplay = props => {
   const Foods = [];
 
- 
+  console.log("food display props: ", props)
 
   for (const food of props.foods) {
     const nutrients = food.foodData.foodNutrients;

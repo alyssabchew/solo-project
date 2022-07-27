@@ -4,7 +4,7 @@ import getFoodData from "../api/getFoodData";
 const initialState = {
   foods: [],
   totalFoods: 0,
-  recipes: {},
+  recipes: [],
   totalRecipes: 0,
 };
 
@@ -15,6 +15,7 @@ const initialState = {
 
 const foodReducer = (state = initialState, action) => {
   const foods = state.foods.slice();
+  const recipes = state.recipes.slice();
   let totalFoods = state.totalFoods;
   let totalRecipes = state.totalRecipes;
 
@@ -23,6 +24,7 @@ const foodReducer = (state = initialState, action) => {
       console.log(action.payload) 
       const newRecipe = {
         recipeName: action.payload,
+        ingredientsList: [],
       }
       console.log(newRecipe);
       recipes.push(newRecipe);
@@ -33,6 +35,19 @@ const foodReducer = (state = initialState, action) => {
         ...state,
         recipes,
         totalRecipes
+      };
+    }
+    case types.ADD_INGREDIENT: {
+      console.log("add ingredient payload: ", action.payload)
+      for (let i = 0; i < recipes.length; i++) {
+        if (recipes[i].recipeName === action.payload.recipeName) {
+          recipes[i].ingredientsList = recipes[i].ingredientsList.push(action.payload.ingredient)
+        }
+      }
+      console.log(recipes);
+      return {
+        ...state,
+        recipes,
       };
     }
     case types.ADD_FOOD: {

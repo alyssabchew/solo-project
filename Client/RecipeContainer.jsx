@@ -29,7 +29,7 @@ class RecipeContainer extends Component {
     console.log(this.props);
     let val = '';
     return (
-      <div className="innerbox">
+      <div className="outerBox">
         { /* add components here... */}
         {/* create a new recipe */}
         <form>
@@ -42,7 +42,7 @@ class RecipeContainer extends Component {
           this.props.addRecipe(val)
            e.preventDefault(); } }>Add Recipe</button>
         </form>
-        <RecipeDisplay addRecipe={this.props.addRecipe}/>
+        <RecipeDisplay recipes={this.props.recipes} addRecipe={this.props.addRecipe}  addFood={this.props.addFood} handleSearch={this.props.handleSearch} handleChange={this.props.handleChange} searchInput={this.props.searchInput} foods={this.props.foods} foodId={this.props.foodId} foodName={this.props.foodName} totalFoods={this.props.totalFoods} foodData={this.props.foodData}/>
         <FoodCreator addFood={this.props.addFood} handleSearch={this.props.handleSearch} handleChange={this.props.handleChange} searchInput={this.props.searchInput}/>
         <FoodDisplay foods={this.props.foods} foodId={this.props.foodId} foodName={this.props.foodName} totalFoods={this.props.totalFoods} foodData={this.props.foodData} />
       </div>
