@@ -6,6 +6,7 @@ import * as actions from './actions/actions.js'
 // import from child components... not currently using food container
 import FoodCreator from './Components/FoodCreator.jsx';
 import FoodDisplay from './Components/FoodDisplay.jsx';
+import RecipeContainer from './RecipeContainer.jsx';
 
  const mapStateToProps = state => ({
   foods: state.foods.foods,
@@ -35,8 +36,9 @@ import FoodDisplay from './Components/FoodDisplay.jsx';
          <div className="outerBox">
           <div className="innerBox">
             <h2 id="header">Foods</h2>
-            <FoodCreator addFood={this.props.addFood} handleSearch={this.props.handleSearch} handleChange={this.props.handleChange} searchInput={this.props.searchInput}/>
-            <FoodDisplay foods={this.props.foods} foodId={this.props.foodId} foodName={this.props.foodName} totalFoods={this.props.totalFoods} foodData={this.props.foodData} />
+            <RecipeContainer />
+            {/* <FoodCreator addFood={this.props.addFood} handleSearch={this.props.handleSearch} handleChange={this.props.handleChange} searchInput={this.props.searchInput}/>
+            <FoodDisplay foods={this.props.foods} foodId={this.props.foodId} foodName={this.props.foodName} totalFoods={this.props.totalFoods} foodData={this.props.foodData} /> */}
           </div>
          </div>
        </div>
