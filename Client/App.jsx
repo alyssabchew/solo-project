@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import getFoodData from "./api/getFoodData.js";
 import MainContainer from "./MainContainer.jsx";
+// import styles from './style.css';
 
  class App extends Component {
    constructor(props){

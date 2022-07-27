@@ -29,7 +29,7 @@ class RecipeContainer extends Component {
     console.log(this.props);
     let val = '';
     return (
-      <div className="outerBox">
+      <div className="innerBox">
         { /* add components here... */}
         {/* create a new recipe */}
         <form>

@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   //this is the either production/develpoment - default is prod
@@ -32,11 +33,15 @@ module.exports = {
     new HtmlWebpackPlugin({
       //creates a new html file and injecting script - referencing the "template"
       //defer source (check console in dev tools - go to index)
-    title: 'Development',
-    // necessary - template! -- use index.html as default
-    // THIS SERVES THE STATIC FILE - STATIC IN DEVSERVER IS USELESS
-    template: './Client/index.html'
-  })],
+      title: 'Development',
+      // necessary - template! -- use index.html as default
+      // THIS SERVES THE STATIC FILE - STATIC IN DEVSERVER IS USELESS
+      template: './index.html'
+    }),
+    new MiniCSSExtractPlugin({
+      filename: './Client/style.css',
+    }),
+  ],
   
   module: {
     rules: [
@@ -57,21 +62,39 @@ module.exports = {
           }
         }
       },
-      
+
       {
-        // test is file is sass -> css -> style?
-        test: /\.s[ac]ss$/i,
-        exclude: /node_modules/,
-        use: [
-          //need to install all loaders first 
-          // 'style' nodes from JS strings - THIRD
-          "style-loader", 
-          // CSS to CommonJS - SECOND
-          "css-loader",
-          // Sass to CSS - FIRST
-          "sass-loader",
-        ],
+        test: /\.css$/i,
+        use: [MiniCSSExtractPlugin.loader, 'css-loader']
       }
+      
+      // {
+      //   // test is file is sass -> css -> style?
+      //   test: /\.s[ac]ss$/i,
+      //   exclude: /node_modules/,
+      //   use: [
+      //     //need to install all loaders first 
+      //     // 'style' nodes from JS strings - THIRD
+      //     "style-loader", 
+      //     // CSS to CommonJS - SECOND
+      //     "css-loader",
+      //     // Sass to CSS - FIRST
+      //     "sass-loader",
+      //   ],
+      // },
+
+      // {
+      //   // test is file is css -> style?
+      //   test: /\.css$/i,
+      //   exclude: /node_modules/,
+      //   use: [
+      //     //need to install all loaders first 
+      //     // 'style' nodes from JS strings 
+      //     "style-loader", 
+      //     // CSS to CommonJS 
+      //     "css-loader",
+      //   ],
+      // }
     ]
   }
 }
