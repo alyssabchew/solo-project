@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 // import getFoodData from "./api/getFoodData";
 import * as actions from './actions/actions.js'
 // import from child components... not currently using food container
-import FoodCreator from './Components/FoodCreator.jsx';
-import FoodDisplay from './Components/FoodDisplay.jsx';
+// import FoodCreator from './Components/FoodCreator.jsx';
+// import FoodDisplay from './Components/FoodDisplay.jsx';
 import RecipeContainer from './RecipeContainer.jsx';
 
  const mapStateToProps = state => ({
@@ -20,6 +20,7 @@ import RecipeContainer from './RecipeContainer.jsx';
   // create functions that will dispatch action creators
   // addMarket: (event) => { dispatch(grabLocationInput(event)); },
   addFood: (food) => dispatch(actions.addFoodActionCreator(food)),
+  addRecipe: (recipe) => dispatch(actions.addRecipeActionCreator(recipe)),
 });
 
  class MainContainer extends Component {
@@ -35,7 +36,7 @@ import RecipeContainer from './RecipeContainer.jsx';
        <div className="container">
          <div className="outerBox">
           <div className="innerBox">
-            <h2 id="header">Foods</h2>
+            <h2 id="header">Create a Recipe!</h2>
             <RecipeContainer />
             {/* <FoodCreator addFood={this.props.addFood} handleSearch={this.props.handleSearch} handleChange={this.props.handleChange} searchInput={this.props.searchInput}/>
             <FoodDisplay foods={this.props.foods} foodId={this.props.foodId} foodName={this.props.foodName} totalFoods={this.props.totalFoods} foodData={this.props.foodData} /> */}
