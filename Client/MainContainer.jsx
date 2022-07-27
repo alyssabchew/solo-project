@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 // import getFoodData from "./api/getFoodData";
-
+import * as actions from './actions/actions.js'
 // import from child components... not currently using food container
-import FoodContainer from './Components/FoodContainer.jsx';
+import FoodCreator from './Components/FoodCreator.jsx';
+import FoodDisplay from './Components/FoodDisplay.jsx';
 
  const mapStateToProps = state => ({
-  foodId: state.foods.foodId,
-  foodName: state.foods.foodName,
-  calories: state.foods.foodId
+  foods: state.foods.foods,
+  totalFoods: state.foods.totalFoods,
+  foodData: state.foods.foodData
  })
 
  const mapDispatchToProps = dispatch => ({
@@ -25,13 +26,16 @@ import FoodContainer from './Components/FoodContainer.jsx';
 
    render() {
     // console.log("rendering main component")
-    let value = '';
+    // let value = '';
     console.log(this.props)
      return (
        <div className="container">
          <div className="outerBox">
-          <h2 id="header">Foods</h2>
-          <FoodContainer addFood={this.props.addFood}/>
+          <div className="innerBox">
+            <h2 id="header">Foods</h2>
+            <FoodCreator addFood={this.props.addFood}/>
+            <FoodDisplay foods={this.props.foods} totalFoods={this.props.totalFoods} foodData={this.props.foodData} />
+          </div>
          </div>
        </div>
      )

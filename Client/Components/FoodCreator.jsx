@@ -1,37 +1,24 @@
 import React from 'react';
-import Food from './Food.jsx';
 
-const FoodContainer = props => {
+const FoodCreator = props => {
   // constructor(props) {
   //   super(props);
   //   // this.handleSearch = this.handleSearch.bind(this);
   // }
   // search now handled in App
-  // let val = '';
-
-  const Foods = [];
-
-  // for (const food of props.foods) {
-  //   Foods.push(
-  //     Food({
-  //       ...food
-  //     })
-  //   )
-  // }
-  console.log(Foods);
+  let val = '';
 
   return (
     <div className="displayBox">
-      <h4>Foods</h4>
-      {Foods}
-      {/* <h3 id="header">Foods!</h3> */}
-      {/* <form>
-        <input
+      <h3>Search for Foods</h3>
+      <form>
+        <input id='searchFood'
           type="text"
           // value={value}
-          onChange={(e) => { val = e.target.value; console.log(val); }} />
-        <button type="submit" onClick={(e) => { val && props.addFood(val); e.preventDefault(); } }>Search</button>
-      </form> */}
+          onChange={(e) => { val = e.target.value }} />
+        <button type="submit" onClick={(e) => { props.addFood(val); e.preventDefault(); } }>Search</button>
+      </form>
+      {/* {Foods} */}
         {/* {getFoodData("fried tofu")} */}
     </div>
   );
@@ -57,4 +44,4 @@ const FoodContainer = props => {
   // }
 }
 
-export default FoodContainer;
+export default FoodCreator;
