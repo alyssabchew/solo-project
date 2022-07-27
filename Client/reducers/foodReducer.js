@@ -15,7 +15,7 @@ const initialState = {
 const foodReducer = (state = initialState, action) => {
   const foods = state.foods.slice();
   let totalFoods = state.totalFoods;
-  let foodData = {};
+  let foodData = state.foodData;
 
   switch (action.type) {
     case types.ADD_FOOD: {
@@ -45,14 +45,17 @@ const foodReducer = (state = initialState, action) => {
         foods.push(newFood);
         totalFoods += 1;
         console.log(foods);
-        return {
+        const newState = {
           ...state,
           foods,
           totalFoods,
           foodData
         };
+        console.log(newState);
+        return newState;
       }).catch(ex => {
         console.log('parsing failed', ex)
+        return;
       });
       // console.log("FOOD RESULTS")
 
