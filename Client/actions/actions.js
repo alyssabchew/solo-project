@@ -8,7 +8,10 @@ export const addFoodActionCreator = food => ({
 
 export const fetchRecipesActionCreator = dispatch => {
   fetch('/recipe')
-  .then(res => res.json())
+  .then(res => {
+    console.log("in fetch (get) recipes call!")
+    res.json()
+  })
   .then(data => {
     dispatch({
       type: types.FETCH_RECIPES,
