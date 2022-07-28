@@ -107,3 +107,8 @@ export const addIngredientActionCreator = recipeName => ({
   type: types.ADD_INGREDIENT,
   payload: recipeName,
 });
+
+export const removeIngredientActionCreator = recipeName => ({
+  type: types.REMOVE_INGREDIENT,
+  payload: recipeName,
+});

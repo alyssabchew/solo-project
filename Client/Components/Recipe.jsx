@@ -14,7 +14,7 @@ const Recipe = props => {
   return (
   <div className="recipeBox">
     <h5>Recipe: {props.recipeName}</h5>
-    <IngredientsList ingredientsList={props.ingredientsList} calories={props.calories}/>
+    <IngredientsList recipeName={props.recipeName} removeIngredient={props.removeIngredient} ingredientsList={props.ingredientsList} calories={props.calories}/>
     <form>
       <input type='text' onChange={(e) => { val = e.target.value }} />
       <button type="submit" onClick={(e) => {

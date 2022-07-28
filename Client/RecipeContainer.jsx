@@ -22,6 +22,7 @@ const mapStateToProps = state => ({
   deleteRecipe: (recipe) => actions.deleteRecipeActionCreator(dispatch, recipe),
   updateRecipeName: (recipe) => actions.updateRecipeNameActionCreator(dispatch, recipe),
   addIngredient: (ingredient) => dispatch(actions.addIngredientActionCreator(ingredient)),
+  removeIngredient: (ingredient) => dispatch(actions.removeIngredientActionCreator(ingredient)),
 });
 
 class RecipeContainer extends Component {
@@ -48,7 +49,7 @@ class RecipeContainer extends Component {
           this.props.addRecipe(val)
            e.preventDefault(); } }>Add Recipe</button>
         </form>
-        <RecipeDisplay updateRecipeName={this.props.updateRecipeName} deleteRecipe={this.props.deleteRecipe} fetchRecipes={this.props.fetchRecipes} addIngredient={this.props.addIngredient} recipes={this.props.recipes} addRecipe={this.props.addRecipe}  addFood={this.props.addFood} handleSearch={this.props.handleSearch} handleChange={this.props.handleChange} searchInput={this.props.searchInput} foods={this.props.foods} foodId={this.props.foodId} foodName={this.props.foodName} totalFoods={this.props.totalFoods} foodData={this.props.foodData}/>
+        <RecipeDisplay updateRecipeName={this.props.updateRecipeName} deleteRecipe={this.props.deleteRecipe} fetchRecipes={this.props.fetchRecipes} addIngredient={this.props.addIngredient} removeIngredient={this.props.removeIngredient} recipes={this.props.recipes} addRecipe={this.props.addRecipe}  addFood={this.props.addFood} handleSearch={this.props.handleSearch} handleChange={this.props.handleChange} searchInput={this.props.searchInput} foods={this.props.foods} foodId={this.props.foodId} foodName={this.props.foodName} totalFoods={this.props.totalFoods} foodData={this.props.foodData}/>
       </div>
       <div className="innerBox">
         <FoodCreator addFood={this.props.addFood} handleSearch={this.props.handleSearch} handleChange={this.props.handleChange} searchInput={this.props.searchInput}/>

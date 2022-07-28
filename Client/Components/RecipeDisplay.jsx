@@ -10,8 +10,10 @@ const RecipeDisplay = props => {
       Recipe({
         ...recipe,
         addIngredient: props.addIngredient,
+        addFood: props.addFood,
         deleteRecipe: props.deleteRecipe,
         updateRecipeName: props.updateRecipeName,
+        removeIngredient: props.removeIngredient,
       })
     )
   }

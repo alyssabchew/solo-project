@@ -79,14 +79,37 @@ const foodReducer = (state = initialState, action) => {
       };
     }
     case types.ADD_INGREDIENT: {
-      console.log("add ingredient payload: ", action.payload)
-      console.log(recipes);
       for (let i = 0; i < recipes.length; i++) {
         const recipe = recipes[i]
         if (recipe.recipeName === action.payload.recipeName) {
           console.log("adding: ", action.payload.ingredient)
           recipe.ingredientsList.push(action.payload.ingredient)
           recipe.calories += action.payload.calories;
+          console.log(recipe.ingredientsList)
+        }
+        console.log(recipe)
+        Object.assign(recipes[i], recipe)
+        console.log("updated recipe: ", recipes[i])
+      }
+      console.log(recipes);
+      return {
+        ...state,
+        recipes,
+      };
+    }
+    case types.REMOVE_INGREDIENT: {
+      console.log("IN REMOVE INGREDIENT");
+      console.log("payload: ", action.payload)
+      for (let i = 0; i < recipes.length; i++) {
+        const recipe = recipes[i]
+        if (recipe.recipeName === action.payload.recipeName) {
+          console.log("removing: ", action.payload.ingredient)
+          for (let j = 0; j < recipe.ingredientsList.length; j++) {
+            if (recipe.ingredientsList[j] === action.payload.ingredient) {
+              const removed = recipe.ingredientsList.splice(j, 1);
+            }
+          }
+          recipe.calories -= action.payload.calories;
           console.log(recipe.ingredientsList)
         }
         console.log(recipe)

@@ -5,7 +5,7 @@ An application to allow users to hold their recipes + track nutrition informatio
 - Core idea: lifestyle/nutrition tracking app
     - Connect to a nutrition API
     - Text box for users to search for food items
-    - Add food to individual days/meals?
+    - Add food to individual days/meals? (not implemented)
 - Secondary idea:
     - Allow users to set RECIPES
         - Combine foods into saved recipes for users to re-add later
@@ -31,8 +31,10 @@ An application to allow users to hold their recipes + track nutrition informatio
 Allow users to combine foods into saved recipes for users to come back to later  
 ##### [ x ] set up SQL database system for foods + recipes  
 ##### [ x ] functionality to add recipes into the database  
-##### [ ] functionality remove recipes into the database  
-##### [ ] functionality to alter recipes in the database  
+##### [ x ] functionality remove recipes into the database  
+##### [ x ] functionality to alter recipes in the database  
+
+### Stretch  
 ##### [ ] ability to add those recipes to specific days + meals  
 
 ## Stretch Goal: Workouts --- will not have time for this  

@@ -68,6 +68,8 @@ const IngredientsList = props => {
       Ingredient({
         ingredient,
         calories: props.calories,
+        removeIngredient: props.removeIngredient,
+        recipeName: props.recipeName,
       })
     );
   }
