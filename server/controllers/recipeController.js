@@ -10,8 +10,8 @@ recipeController.getRecipes = (req, res, next) => {
 }
 
 recipeController.addRecipe = async (req, res, next) => {
-  const { recipe } = req.body;
   console.log("ADD RECIPE RECIPE CONTROLLER")
+  const recipe = req.body;
   console.log(recipe)
   const recipeAdder = `INSERT INTO recipes (recipe) VALUES ($1) RETURNING *`
    try{
