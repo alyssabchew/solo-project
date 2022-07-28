@@ -12,12 +12,12 @@ const Recipe = props => {
   console.log("IN RECIPE")
   console.log(props);
   return (
-  <div className="recipeBox">
-    <h5>Recipe: {props.recipeName}</h5>
+  <div className="recipeBox" id="recipe">
+    <h5 id="header5">Recipe: {props.recipeName}</h5>
     <IngredientsList recipeName={props.recipeName} removeIngredient={props.removeIngredient} ingredientsList={props.ingredientsList} calories={props.calories}/>
-    <form>
-      <input type='text' onChange={(e) => { val = e.target.value }} />
-      <button type="submit" onClick={(e) => {
+    <form id="recipeForm">
+      <input type='text' autocomplete="off" onChange={(e) => { val = e.target.value }} />
+      <button id="recipeButton" type="submit" onClick={(e) => {
         console.log(val);
         let foodData, nutrients, carbs, protein, fats, calories;
         getFoodData.foodSearch(val)
@@ -77,24 +77,28 @@ const Recipe = props => {
         e.preventDefault(); 
       }}>add ingredient</button>
     </form>
-    <form>
-      <button type="submit" onClick={(e) => {
-        props.deleteRecipe(props.recipeName);
-        console.log("DELETED");
-        // console.log(e.target.parentNode.parentNode);
-        e.target.parentNode.parentNode.style.display = 'none';
-        e.preventDefault();
-      }}>delete recipe</button>
-    </form>
-    <form>
-      <input type='text' onChange={(e) => { newName = e.target.value }} />
-      <button type="submit" onClick={(e) => {
+    <form id="recipeForm">
+      <input type='text' autocomplete="off" onChange={(e) => { newName = e.target.value }} />
+      <button id="recipeButton" type="submit" onClick={(e) => {
         props.updateRecipeName({oldName: props.recipeName, newName});
         console.log("UPDATED");
         // console.log(e.target.parentNode.parentNode);
         // e.target.parentNode.parentNode.style.display = 'none';
         e.preventDefault();
       }}>update recipe name</button>
+    </form>
+    {/* <br id="recipeForm" />
+    <br id="recipeForm" /> */}
+    <br />
+    <br />
+    <form id="recipeForm">
+      <button type="submit" onClick={(e) => {
+        props.deleteRecipe(props.recipeName);
+        console.log("DELETED");
+        // console.log(e.target.parentNode.parentNode);
+        e.target.parentNode.parentNode.style.display = 'none';
+        e.preventDefault();
+      }}> delete recipe </button>
     </form>
     {/* <FoodCreator addFood={props.addFood} handleSearch={props.handleSearch} handleChange={props.handleChange} searchInput={props.searchInput}/> */}
     {/* <FoodDisplay foods={props.foods} totalFoods={props.totalFoods} /> */}

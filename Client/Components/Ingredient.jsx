@@ -5,10 +5,10 @@ const Ingredient = props => {
   console.log("IN INGREDIENT")
   console.log(props)
   return (
-  <div>
+  <div id="ingredients">
     {/* <p>{props.ingredient}, calories: {props.calories}</p> */}
-    <p>{props.ingredient}</p>
-    <button onClick={(e) => {
+    <p id="ingredients">{props.ingredient}
+    <button id="recipeButton" onClick={(e) => {
       e.target.parentNode.style.display = 'none'; 
       let foodData, nutrients, carbs, protein, fats, calories;
         getFoodData.foodSearch(props.ingredient)
@@ -66,7 +66,9 @@ const Ingredient = props => {
         });
       // props.removeIngredient({recipeName: props.recipeName, ingredient: props.ingredient, calories: props.calories}); 
       e.preventDefault(); 
-    }}>remove ingredient</button>
+    }}> remove {props.ingredient} from recipe</button>
+    </p>
+    <br />
   </div>
   )
 }

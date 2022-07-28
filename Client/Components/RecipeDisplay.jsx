@@ -21,7 +21,7 @@ const RecipeDisplay = props => {
 
   return (
     <div className="displayBox">
-      <h5>Recipes</h5>
+      <h5 id="header3">Recipes</h5>
       {Recipes}
     </div>
   )

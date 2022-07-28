@@ -13,10 +13,11 @@ const FoodCreator = props => {
   console.log(props);
   return (
     <div className="displayBox">
-      <h3>Search for Foods</h3>
+      <h3 id="header2">Search for Foods</h3>
       <form>
         <input id='searchFood'
           type="text"
+          autocomplete="off"
           // value={value}
           onChange={(e) => { val = e.target.value }} />
           {/* onChange={props.handleChange} /> */}

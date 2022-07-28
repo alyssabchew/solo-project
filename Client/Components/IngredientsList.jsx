@@ -75,10 +75,13 @@ const IngredientsList = props => {
   }
   
   return (
-    <div className="displayBox">
-      <h5>Ingredients List: </h5>
+    <div id="recipeForm" className="displayBox">
+      <h5 id="header5">Ingredients List: </h5>
       {Ingredients}
-      <h5>Calories: {props.calories}</h5>
+      <br />
+      <br />
+      <br />
+      <h5 id="header5">Calories: {props.calories}</h5>
     </div>
   )
 }

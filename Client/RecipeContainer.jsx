@@ -36,12 +36,13 @@ class RecipeContainer extends Component {
     return (
       <div>
       <div className="innerBox">
-        <h2>Create a Recipe!</h2>
+        <h2 id="header2">Create a Recipe!</h2>
         { /* add components here... */}
         {/* create a new recipe */}
         <form>
         <input id='recipeCreator'
           type="text"
+          autocomplete="off"
           // value={value}
           onChange={(e) => { val = e.target.value }} />
           {/* onChange={props.handleChange} /> */}

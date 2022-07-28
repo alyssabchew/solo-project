@@ -61,7 +61,7 @@ const FoodDisplay = props => {
 
   return (
     <div className="displayBox">
-      <h5>Foods</h5>
+      <h5 id="header3">Foods</h5>
       {Foods}
     </div>
   )
