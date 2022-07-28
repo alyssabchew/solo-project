@@ -7,9 +7,12 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 
 // require routers
-const foodRouter = require('./routers/foodRouter');
+const recipeRouter = require('./routers/recipeRouter');
 
-app.use('/food', foodRouter);
+app.use('/recipe', recipeRouter);
+
+// Catch all 404 error handler
+app.use((req, res) => res.status(404).send('404: Page not found! :('))
 
 // Global error handler
 app.use((err, req, res, next) => {
