@@ -25,6 +25,7 @@ const foodReducer = (state = initialState, action) => {
       const newRecipe = {
         recipeName: action.payload,
         ingredientsList: [],
+        calories: 0,
       }
       console.log(newRecipe);
       recipes.push(newRecipe);
@@ -39,10 +40,18 @@ const foodReducer = (state = initialState, action) => {
     }
     case types.ADD_INGREDIENT: {
       console.log("add ingredient payload: ", action.payload)
+      console.log(recipes);
       for (let i = 0; i < recipes.length; i++) {
-        if (recipes[i].recipeName === action.payload.recipeName) {
-          recipes[i].ingredientsList = recipes[i].ingredientsList.push(action.payload.ingredient)
+        const recipe = recipes[i]
+        if (recipe.recipeName === action.payload.recipeName) {
+          console.log("adding: ", action.payload.ingredient)
+          recipe.ingredientsList.push(action.payload.ingredient)
+          recipe.calories += action.payload.calories;
+          console.log(recipe.ingredientsList)
         }
+        console.log(recipe)
+        Object.assign(recipes[i], recipe)
+        console.log("updated recipe: ", recipes[i])
       }
       console.log(recipes);
       return {

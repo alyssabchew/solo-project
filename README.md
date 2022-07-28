@@ -20,7 +20,11 @@ An application to allow users to hold their recipes + track nutrition informatio
 [ x ] Generate a search box for users to search for food items
 - currently not working (can't search)
 - now generates a search box that works but all code is stuck in App.jsx
-[ ] Specify days + meals/recipes of foods?
+- fixed! code is now separated out with redux + prop drilling
+[ x ] Specify recipes of foods?
+- currently can add list of ingredients in a recipe but cannot list their nutritional information
+### Stretch
+[ ] Add specific recipes to days?
 
 ## Recipes
 Allow users to combine foods into saved recipes for users to come back to later
@@ -30,7 +34,7 @@ Allow users to combine foods into saved recipes for users to come back to later
 [ ] functionality to alter recipes in the database
 [ ] ability to add those recipes to specific days + meals
 
-## Stretch Goal: Workouts
+## Stretch Goal: Workouts --- will not have time for this
 [ ] create a SQL database system for workouts
 [ ] find a way to specify caloric burn? - another API?
 [ ] TO COMPLETE ONLY IF I GET HERE... 

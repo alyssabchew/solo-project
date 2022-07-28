@@ -35,7 +35,7 @@ import RecipeContainer from './RecipeContainer.jsx';
      return (
        <div className="container">
          <div className="outerBox">
-            <h2 id="header">Create a Recipe!</h2>
+            <h2 id="header">Lifestyle Tracker </h2>
             <RecipeContainer />
             {/* <FoodCreator addFood={this.props.addFood} handleSearch={this.props.handleSearch} handleChange={this.props.handleChange} searchInput={this.props.searchInput}/>
             <FoodDisplay foods={this.props.foods} foodId={this.props.foodId} foodName={this.props.foodName} totalFoods={this.props.totalFoods} foodData={this.props.foodData} /> */}

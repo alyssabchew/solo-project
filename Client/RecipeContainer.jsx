@@ -18,6 +18,7 @@ const mapStateToProps = state => ({
   // addMarket: (event) => { dispatch(grabLocationInput(event)); },
   addFood: (food) => dispatch(actions.addFoodActionCreator(food)),
   addRecipe: (recipe) => dispatch(actions.addRecipeActionCreator(recipe)),
+  addIngredient: (ingredient) => dispatch(actions.addIngredientActionCreator(ingredient)),
 });
 
 class RecipeContainer extends Component {
@@ -29,7 +30,9 @@ class RecipeContainer extends Component {
     console.log(this.props);
     let val = '';
     return (
+      <div>
       <div className="innerBox">
+        <h2>Create a Recipe!</h2>
         { /* add components here... */}
         {/* create a new recipe */}
         <form>
@@ -42,9 +45,12 @@ class RecipeContainer extends Component {
           this.props.addRecipe(val)
            e.preventDefault(); } }>Add Recipe</button>
         </form>
-        <RecipeDisplay recipes={this.props.recipes} addRecipe={this.props.addRecipe}  addFood={this.props.addFood} handleSearch={this.props.handleSearch} handleChange={this.props.handleChange} searchInput={this.props.searchInput} foods={this.props.foods} foodId={this.props.foodId} foodName={this.props.foodName} totalFoods={this.props.totalFoods} foodData={this.props.foodData}/>
+        <RecipeDisplay addIngredient={this.props.addIngredient} recipes={this.props.recipes} addRecipe={this.props.addRecipe}  addFood={this.props.addFood} handleSearch={this.props.handleSearch} handleChange={this.props.handleChange} searchInput={this.props.searchInput} foods={this.props.foods} foodId={this.props.foodId} foodName={this.props.foodName} totalFoods={this.props.totalFoods} foodData={this.props.foodData}/>
+      </div>
+      <div className="innerBox">
         <FoodCreator addFood={this.props.addFood} handleSearch={this.props.handleSearch} handleChange={this.props.handleChange} searchInput={this.props.searchInput}/>
         <FoodDisplay foods={this.props.foods} foodId={this.props.foodId} foodName={this.props.foodName} totalFoods={this.props.totalFoods} foodData={this.props.foodData} />
+      </div>
       </div>
     );
   }
