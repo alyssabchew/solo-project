@@ -20,6 +20,17 @@ const foodReducer = (state = initialState, action) => {
   let totalRecipes = state.totalRecipes;
 
   switch (action.type) {
+    case types.FETCH_RECIPES: {
+      totalRecipes = action.payload.length;
+      recipes = state.recipes.slice();
+      recipes.push(...action.payload);
+      console.log("fetch recipes: recipes after push: ", recipes);
+      return {
+        ...state,
+        totalRecipes,
+        recipes,
+      }
+    }
     case types.ADD_RECIPE: {
       console.log(action.payload) 
       const newRecipe = {

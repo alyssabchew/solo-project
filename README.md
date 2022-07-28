@@ -29,8 +29,8 @@ An application to allow users to hold their recipes + track nutrition informatio
 
 ## Recipes
 Allow users to combine foods into saved recipes for users to come back to later  
-##### [ ] set up SQL database system for foods + recipes  
-##### [ ] functionality to add recipes into the database  
+##### [ x ] set up SQL database system for foods + recipes  
+##### [ x ] functionality to add recipes into the database  
 ##### [ ] functionality remove recipes into the database  
 ##### [ ] functionality to alter recipes in the database  
 ##### [ ] ability to add those recipes to specific days + meals  

@@ -18,7 +18,6 @@ import RecipeContainer from './RecipeContainer.jsx';
 
  const mapDispatchToProps = dispatch => ({
   // create functions that will dispatch action creators
-  // addMarket: (event) => { dispatch(grabLocationInput(event)); },
   addFood: (food) => dispatch(actions.addFoodActionCreator(food)),
   addRecipe: (recipe) => dispatch(actions.addRecipeActionCreator(recipe)),
 });

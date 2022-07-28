@@ -3,11 +3,11 @@ const app = express();
 const path = require('path');
 const PORT = 3000;
 
-app.use(express.json());
-app.use(express.urlencoded({extended: true}))
-
 // require routers
 const recipeRouter = require('./routers/recipeRouter');
+
+app.use(express.json());
+app.use(express.urlencoded({extended: true}))
 
 app.use('/recipe', recipeRouter);
 

@@ -17,6 +17,27 @@ module.exports = {
   },
 
   devServer : { 
+    static: {
+      publicPath: '/',
+      directory: path.resolve(__dirname)
+    },
+    host: 'localhost',
+    port: 8080,
+    // enable HMR on the devServer
+    hot: true,
+    // fallback to root for other urls
+    historyApiFallback: true,
+    proxy: {
+      // '/recipe': 'http://localhost:3000',
+      '/**': {
+        target: 'http://localhost:3000/',
+        secure: false,
+      },
+      // '/assets/**': {
+      //   target: 'http://localhost:3000/',
+      //   secure: false,
+      // },
+    },
     // proxy: {
     //   '/': {
     //     target: 'https://api.edamam.com',

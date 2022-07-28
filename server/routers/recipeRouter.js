@@ -3,10 +3,10 @@ const recipeController = require('../controllers/recipeController');
 const router = express.Router();
 
 router.get('/', recipeController.getRecipes, (req, res) => {
-  res.status(200).json(res.locals.recipe);
+  res.status(200).json(res.locals.recipes);
 })
 
-router.post('/recipe', recipeController.addRecipe, (req, res) => {
+router.post('/', recipeController.addRecipe, (req, res) => {
   res.status(200).json(res.locals.recipe);
 })
 
