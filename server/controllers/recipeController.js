@@ -76,4 +76,28 @@ recipeController.deleteRecipe = async(req, res, next) => {
   }
 }
 
+recipeController.updateRecipeName = async(req, res, next) => {
+  console.log("UPDATE RECIPE NAME RECIPE CONTROLLER")
+  console.log("req.body: ", req.body)
+  // console.log("req.params: ", req.params)
+  const {newName, oldName} = req.body.recipe;
+  const recipeUpdater = `UPDATE recipes SET recipename=$1 WHERE recipename=$2`
+  try{
+    const recipeParams = [newName, oldName ];
+    const result = await db.query(recipeUpdater, recipeParams);
+    console.log("THIS IS THE QUERY RESULT: ", result);
+    res.locals.newName = newName;
+    res.locals.oldName = oldName;
+    return next();
+  }
+  catch (err) {
+    next(
+      {
+        log: `recipeController.updateRecipe: ERROR: ${err}`,
+        message: { err: 'Couldn\'t update entry, check server logs' },
+      }
+    )
+  }
+}
+
 module.exports = recipeController;

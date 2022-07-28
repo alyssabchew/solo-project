@@ -75,6 +75,34 @@ export const deleteRecipeActionCreator = (dispatch, recipeInfo) => {
   })
 }
 
+export const updateRecipeNameActionCreator = (dispatch, recipeInfo) => {
+  // type: types.ADD_RECIPE,
+  // payload: recipeName,
+  fetch("/recipe", {
+     method: 'PATCH',
+     headers: {
+       'Accept': 'application/json',
+       'Content-Type': 'application/json'
+     },
+     body: JSON.stringify({ recipe: recipeInfo })
+   })
+   .then(res => {
+    console.log('in fetch patch recipe call')
+    console.log(res);
+    return res.json();
+   })
+   .then(data => {
+    console.log(data);
+     dispatch({
+       type: types.UPDATE_RECIPE_NAME,
+       payload: data,
+     })
+   })
+   .catch(err =>{
+     console.log(err);
+   })
+};
+
 export const addIngredientActionCreator = recipeName => ({
   type: types.ADD_INGREDIENT,
   payload: recipeName,

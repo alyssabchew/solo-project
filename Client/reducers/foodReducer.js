@@ -64,6 +64,20 @@ const foodReducer = (state = initialState, action) => {
         totalRecipes
       };
     }
+    case types.UPDATE_RECIPE_NAME: {
+      console.log(action.payload);
+      // let remainingRecipes = recipes.filter(data => data.recipeName !== action.payload);
+      for (let i = 0; i < recipes.length; i++) {
+        if (recipes[i].recipeName === action.payload.oldName) {
+          recipes[i].recipeName = action.payload.newName;
+        }
+      }
+      console.log("recipes after updating a recipe name: ", recipes);
+      return {
+        ...state,
+        recipes
+      };
+    }
     case types.ADD_INGREDIENT: {
       console.log("add ingredient payload: ", action.payload)
       console.log(recipes);

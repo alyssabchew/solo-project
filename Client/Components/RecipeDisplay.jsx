@@ -11,6 +11,7 @@ const RecipeDisplay = props => {
         ...recipe,
         addIngredient: props.addIngredient,
         deleteRecipe: props.deleteRecipe,
+        updateRecipeName: props.updateRecipeName,
       })
     )
   }

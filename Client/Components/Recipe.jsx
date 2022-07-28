@@ -6,6 +6,7 @@ import getFoodData from '../api/getFoodData';
 
 // each recipe needs it's own button to add a food
 let val = '';
+let newName = '';
 
 const Recipe = props => {
   console.log("IN RECIPE")
@@ -85,7 +86,16 @@ const Recipe = props => {
         e.preventDefault();
       }}>delete recipe</button>
     </form>
-    <p></p>
+    <form>
+      <input type='text' onChange={(e) => { newName = e.target.value }} />
+      <button type="submit" onClick={(e) => {
+        props.updateRecipeName({oldName: props.recipeName, newName});
+        console.log("UPDATED");
+        // console.log(e.target.parentNode.parentNode);
+        // e.target.parentNode.parentNode.style.display = 'none';
+        e.preventDefault();
+      }}>update recipe name</button>
+    </form>
     {/* <FoodCreator addFood={props.addFood} handleSearch={props.handleSearch} handleChange={props.handleChange} searchInput={props.searchInput}/> */}
     {/* <FoodDisplay foods={props.foods} totalFoods={props.totalFoods} /> */}
   </div>
