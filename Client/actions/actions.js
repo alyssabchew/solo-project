@@ -49,6 +49,32 @@ export const addRecipeActionCreator = (dispatch, recipeInfo) => {
    })
 };
 
+export const deleteRecipeActionCreator = (dispatch, recipeInfo) => {
+  fetch("/recipe", {
+    method: 'DELETE',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ recipe: recipeInfo })
+  })
+  .then(res => {
+   console.log('in fetch delete recipe call')
+   console.log(res);
+   return res.json();
+  })
+  .then(data => {
+   console.log(data);
+    dispatch({
+      type: types.DELETE_RECIPE,
+      payload: data.recipename,
+    })
+  })
+  .catch(err =>{
+    console.log(err);
+  })
+}
+
 export const addIngredientActionCreator = recipeName => ({
   type: types.ADD_INGREDIENT,
   payload: recipeName,

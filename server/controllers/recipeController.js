@@ -55,4 +55,25 @@ recipeController.addRecipe = async (req, res, next) => {
    }
 }
 
+recipeController.deleteRecipe = async(req, res, next) => {
+  console.log("DELETE RECIPE RECIPE CONTROLLER")
+  console.log("req.body: ", req.body)
+  const recipeName = req.body.recipe;
+  const recipeDeleter = `DELETE FROM recipes WHERE recipename=$1`
+  try{
+    const recipeParams = [recipeName];
+    const result = await db.query(recipeDeleter, recipeParams);
+    console.log("THIS IS THE QUERY RESULT: ", result);
+    return next();
+  }
+  catch (err) {
+    next(
+      {
+        log: `recipeController.deleteRecipe: ERROR: ${err}`,
+        message: { err: 'Couldn\'t delete entry, check server logs' },
+      }
+    )
+  }
+}
+
 module.exports = recipeController;

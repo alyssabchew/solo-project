@@ -10,4 +10,8 @@ router.post('/', recipeController.addRecipe, (req, res) => {
   res.status(200).json(res.locals.recipe);
 })
 
+router.delete('/', recipeController.deleteRecipe, (req, res) => {
+  res.status(200);
+})
+
 module.exports = router;

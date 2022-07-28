@@ -1,5 +1,4 @@
 import * as types from '../constants/actionTypes';
-import getFoodData from "../api/getFoodData";
 
 const initialState = {
   foods: [],
@@ -46,6 +45,22 @@ const foodReducer = (state = initialState, action) => {
       return {
         ...state,
         recipes,
+        totalRecipes
+      };
+    }
+    case types.DELETE_RECIPE: {
+      console.log(action.payload);
+      let remainingRecipes = recipes.filter(data => data.recipeName !== action.payload);
+      // for (let i = 0; i < recipes.length; i++) {
+      //   if (recipes[i].recipeName === action.payload) {
+      //     remainingArr = objArr.filter(data => data.name != 'Ragnar');
+      //   }
+      // }
+      console.log("recipes after deleting recipe: ", remainingRecipes);
+      totalRecipes -= 1;
+      return {
+        ...state,
+        recipes: remainingRecipes,
         totalRecipes
       };
     }

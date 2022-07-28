@@ -76,6 +76,15 @@ const Recipe = props => {
         e.preventDefault(); 
       }}>add ingredient</button>
     </form>
+    <form>
+      <button type="submit" onClick={(e) => {
+        props.deleteRecipe(props.recipeName);
+        console.log("DELETED");
+        // console.log(e.target.parentNode.parentNode);
+        e.target.parentNode.parentNode.style.display = 'none';
+        e.preventDefault();
+      }}>delete recipe</button>
+    </form>
     <p></p>
     {/* <FoodCreator addFood={props.addFood} handleSearch={props.handleSearch} handleChange={props.handleChange} searchInput={props.searchInput}/> */}
     {/* <FoodDisplay foods={props.foods} totalFoods={props.totalFoods} /> */}
